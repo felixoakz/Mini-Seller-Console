@@ -83,3 +83,11 @@ A lightweight React application demonstrating lead management functionalities, i
     ```bash
     node generateLeads.js
     ```
+
+### Running the Application
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to the URL provided by Vite (usually `http://localhost:5173`).
