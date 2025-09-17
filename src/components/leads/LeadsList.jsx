@@ -12,7 +12,9 @@ const LeadsList = () => {
   const [statusFilter, setStatusFilter] = useState(
     () => localStorage.getItem('leads.statusFilter') || 'All'
   );
-  const [sort, setSort] = useState('score_desc');
+  const [sort, setSort] = useState(
+    () => localStorage.getItem('leads.sort') || 'score_desc'
+  );
   const [selectedLead, setSelectedLead] = useState(null);
 
   useEffect(() => {
@@ -22,6 +24,10 @@ const LeadsList = () => {
   useEffect(() => {
     localStorage.setItem('leads.statusFilter', statusFilter);
   }, [statusFilter]);
+
+  useEffect(() => {
+    localStorage.setItem('leads.sort', sort);
+  }, [sort]);
 
   const filteredLeads = useMemo(() => {
     let leads = [...state.leads];
